@@ -1,14 +1,19 @@
-def buildApp() {
+def buildJar() {
   echo 'building the application...'
+  sh 'mvn package'
 }
 
-def testApp() {
-  echo 'testing the application...'
+def buildImage() {
+  echo "building the docker image..."
+  withCredentials([usernamePassword(credentialsId: 'docker-hub', passwordVariable: 'PASS', usernameVariable: 'USER')]){
+     sh 'docker build -t yosryrwyhel/petclinic:jma-1.0 .'
+     sh "echo $PASS | docker login -u $USER --password-stdin"
+     sh 'docker push yosryrwyhel/petclinic:jma-1.0'
+  }
 }
 
 def deployApp() {
-  echo 'Deploying the application....'
-  echo "Deploying version ${params.VIRSION}"
+  echo 'deploying the application...'
 }
 
 return this
