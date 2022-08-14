@@ -20,10 +20,10 @@ pipeline{
       steps{
         script{
           echo "building the docker image..."
-          withCredentials([usernamePassword(credentialsId: 'docker', passwordVariable: 'PASS', usernameVariable: 'USER')]){
-            sh 'docker build -t yosry/petclinic:lts .'
+          withCredentials([usernamePassword(credentialsId: 'docker-hub', passwordVariable: 'PASS', usernameVariable: 'USER')]){
+            sh 'docker build -t yosryrwyhel/petclinic:1.0 .'
             sh "echo $PASS | docker login -u $USER --password-stdin"
-            sh 'docker push yosry/petclinic:lts'
+            sh 'docker push yosryrwyhel/petclinic:1.0'
           }
         }
       }
