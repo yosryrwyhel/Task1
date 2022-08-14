@@ -9,7 +9,7 @@ def buildImage() {
 //      sh 'docker build -t yosryrwyhel/petclinic:jma-1.0 .'
 //      sh "echo $PASS | docker login -u $USER --password-stdin"
 //      sh 'docker push yosryrwyhel/petclinic:jma-1.0'
-  }
+//   }
 }
 
 def deployApp() {
