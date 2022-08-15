@@ -23,6 +23,15 @@ pipeline{
       }
     }
     
+    stage("build jar"){
+      
+      steps{
+        script{
+          gv.test()
+        }
+      }
+    }
+    
     stage("build image"){
       
       steps{
