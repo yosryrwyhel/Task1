@@ -23,7 +23,7 @@ pipeline{
       }
     }
     
-    stage("build jar"){
+    stage("test"){
       
       steps{
         script{
