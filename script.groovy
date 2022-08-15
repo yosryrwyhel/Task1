@@ -3,6 +3,10 @@ def buildJar() {
   sh 'mvn package'
 }
 
+def test() {
+  echo 'testing the application...'
+}
+
 def buildImage() {
   echo "building the docker image..."
   withCredentials([usernamePassword(credentialsId: 'docker-hub', passwordVariable: 'PASS', usernameVariable: 'USER')]){
