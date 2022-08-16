@@ -1,7 +1,7 @@
 def buildJar() {
   echo 'building the application...'
   sh 'mvn package'
-  sh 'docker package'
+//   sh 'docker package'
 }
 
 def test() {
