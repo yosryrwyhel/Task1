@@ -10,9 +10,9 @@ def test() {
 def buildImage() {
   echo "building the docker image..."
   withCredentials([usernamePassword(credentialsId: 'docker-hub', passwordVariable: 'PASS', usernameVariable: 'USER')]){
-     sh 'docker build -t yosryrwyhel/petclinic:pt-1.0 .'
+     sh 'docker build -t yosryrwyhel/petclinic:jma-1.0 .'
      sh "echo $PASS | docker login -u $USER --password-stdin"
-     sh 'docker push yosryrwyhel/petclinic:pt-1.0'
+     sh 'docker push yosryrwyhel/petclinic:jma-1.0'
   }
 }
 
