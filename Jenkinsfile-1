@@ -1,1 +1,6 @@
-
+pipeline{
+   agent{lable 'linux'}
+   options {
+      buildDiscarder(logRotator(numToKeepStr: '5'))
+      }
+}
