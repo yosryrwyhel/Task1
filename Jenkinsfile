@@ -33,6 +33,15 @@ pipeline{
       }
     }
     
+    stage("sonarqube"){
+      
+      steps{
+        script{
+          gv.sonarqube()
+        }
+      }
+    }
+    
     stage("build image"){
       
       steps{
