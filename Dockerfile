@@ -1,11 +1,10 @@
-FROM maven
-
-# ENV MONGO_DB_USERNAME=admin\
-#     MONGO_DB_PWD=password
-
-EXPOSE 8080
-
-COPY ./target/task1-1.0-SNAPSHOT.jar /usr/app/
-WORKDIR /usr/app
-
-ENTRYPOINT ["java","-jar","task1-1.0-SNAPSHOT.jar"]
+# use a node base image
+FROM node:7-onbuild
+# set maintainer
+LABEL maintainer "crudsinfotechng@gmail.com"
+# set a health check
+HEALTHCHECK --interval=5s \
+--timeout=5s \
+CMD curl -f http://127.0.0.1:8000 || exit 1
+# tell docker what port to expose
+EXPOSE 8000
