@@ -1,10 +1,6 @@
-# use a node base image
-FROM node:7-onbuild
-# set maintainer
-LABEL maintainer "crudsinfotechng@gmail.com"
-# set a health check
-HEALTHCHECK --interval=5s \
-            --timeout=5s \
-            CMD curl -f http://localhost:8000 || exit 1
-# tell docker what port to expose
-EXPOSE 8000
+FROM java:8-jdk-alpine
+COPY ./target/spring-petclinic-2.2.0.BUILD-SNAPSHOT.jar /usr/app/
+WORKDIR /usr/app
+EXPOSE 8080
+ENTRYPOINT ["java", "-jar", "spring-petclinic-2.2.0.BUILD-SNAPSHOT.jar"]
+
