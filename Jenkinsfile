@@ -43,14 +43,14 @@ pipeline{
       }
     }
     
-    stage("sonarqube"){
+//     stage("sonarqube"){
       
-      steps{
-        script{
-          gv.sonarqube()
-        }
-      }
-    }
+//       steps{
+//         script{
+//           gv.sonarqube()
+//         }
+//       }
+//     }
     
     stage("deploy"){
       
