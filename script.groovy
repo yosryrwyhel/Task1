@@ -8,10 +8,10 @@ def test() {
 }
 
 def sonarqube() {
-  echo 'testing the application...'
-  withSonarQubeEnv(installationName: 'sq1'){
-    sh './mvnw clean sonar:sonar'
-  }
+//   echo 'testing the application...'
+//   withSonarQubeEnv(installationName: 'sq1'){
+//     sh './mvnw clean sonar:sonar'
+//   }
 }
 
 def buildImage() {
