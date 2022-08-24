@@ -11,7 +11,7 @@ def sonarqube() {
   echo 'testing the application...'
 //   withSonarQubeEnv(installationName: 'sq1'){
 //     sh './mvnw clean sonar:sonar'
-  }
+//   }
 }
 
 def buildImage() {
@@ -20,7 +20,7 @@ def buildImage() {
 //      sh 'docker build -t yosryrwyhel/petclinic:jma-1.0 .'
 //      sh "echo $PASS | docker login -u $USER --password-stdin"
 //      sh 'docker push yosryrwyhel/petclinic:jma-1.0'
-  }
+//   }
 }
 
 def deployApp() {
