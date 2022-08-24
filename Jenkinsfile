@@ -9,9 +9,11 @@ pipeline{
     stage("init"){
       
       steps{
-        script{
-          gv = load"script.groovy"
-        }
+        echo 'building the application...'
+        sh 'mvn package'
+//         script{
+//           gv = load"script.groovy"
+//         }
       }
     }
     
